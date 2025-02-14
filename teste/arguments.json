@@ -1,0 +1,25 @@
+[
+  {
+    "peripheral": 50,
+    "instruction": 41,
+    "arguments": [
+      250,
+      150,
+      50,
+      100
+    ]
+  },
+  {
+    "peripheral": 50,
+    "instruction": 6,
+    "arguments": []
+  },
+  {
+    "peripheral": 50,
+    "instruction": 20,
+    "arguments": [
+      7,
+      1
+    ]
+  }
+]
