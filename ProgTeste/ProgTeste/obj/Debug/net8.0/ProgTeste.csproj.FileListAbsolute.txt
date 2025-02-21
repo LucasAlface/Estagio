@@ -1,0 +1,17 @@
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\bin\Debug\net8.0\ProgTeste.exe
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\bin\Debug\net8.0\ProgTeste.deps.json
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\bin\Debug\net8.0\ProgTeste.runtimeconfig.json
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\bin\Debug\net8.0\ProgTeste.dll
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\bin\Debug\net8.0\ProgTeste.pdb
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.AssemblyInfoInputs.cache
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.AssemblyInfo.cs
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.csproj.CoreCompileInputs.cache
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.dll
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\refint\ProgTeste.dll
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.pdb
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.genruntimeconfig.cache
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ref\ProgTeste.dll
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.csproj.AssemblyReference.cache
+C:\Users\Utilizador\Desktop\c#\ProgTeste\ProgTeste\obj\Debug\net8.0\ProgTeste.csproj.Up2Date
