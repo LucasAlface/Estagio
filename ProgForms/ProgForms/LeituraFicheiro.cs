@@ -13,9 +13,9 @@ namespace LeituraFicheiro
         public string? game { get; set; }
         public string? partner { get; set; }
         public string? object_name { get; set; }
-        public Boolean community { get; set; }
-        public List<RNS> rns { get; set; }
-        public List<CoreDataRefs> core_datarefs { get; set; }
+        public Boolean? community { get; set; }
+        public List<RNS>? rns { get; set; }
+        public List<CoreDataRefs>? core_datarefs { get; set; }
 
         public Simulator()
         {
