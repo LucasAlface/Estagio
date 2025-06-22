@@ -1,14 +1,14 @@
 ﻿namespace ProgForms
 {
-    partial class Form1
+    partial class EditFile
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,15 +23,16 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            GBOpcoes = new GroupBox();
             filesListBox = new ListBox();
+            Exit = new Button();
+            saveButton = new Button();
             LogPanel = new Panel();
-            communityBox = new CheckBox();
+            communityCheckBox = new CheckBox();
             label8 = new Label();
             label7 = new Label();
             coreDataTextBox = new TextBox();
@@ -45,39 +46,45 @@
             label3 = new Label();
             gameTextBox = new TextBox();
             label2 = new Label();
-            Exit = new Button();
-            label1 = new Label();
-            editFileButtton = new Button();
-            newFileButton = new Button();
-            GBOpcoes.SuspendLayout();
             LogPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // GBOpcoes
-            // 
-            GBOpcoes.Controls.Add(filesListBox);
-            GBOpcoes.FlatStyle = FlatStyle.Popup;
-            GBOpcoes.Location = new Point(452, 63);
-            GBOpcoes.Name = "GBOpcoes";
-            GBOpcoes.Size = new Size(336, 304);
-            GBOpcoes.TabIndex = 0;
-            GBOpcoes.TabStop = false;
-            GBOpcoes.Text = "Files List";
             // 
             // filesListBox
             // 
             filesListBox.FormattingEnabled = true;
             filesListBox.ItemHeight = 15;
-            filesListBox.Location = new Point(6, 22);
+            filesListBox.Location = new Point(453, 47);
             filesListBox.Name = "filesListBox";
-            filesListBox.Size = new Size(324, 259);
-            filesListBox.TabIndex = 1;
-            filesListBox.SelectedIndexChanged += filesListBox_SelectedIndexChanged;
+            filesListBox.Size = new Size(324, 334);
+            filesListBox.TabIndex = 2;
+            filesListBox.SelectedValueChanged += filesListBox_SelectedValueChanged;
+            // 
+            // Exit
+            // 
+            Exit.FlatStyle = FlatStyle.Popup;
+            Exit.Location = new Point(685, 397);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(103, 41);
+            Exit.TabIndex = 4;
+            Exit.Text = "Exit";
+            Exit.UseVisualStyleBackColor = true;
+            Exit.Click += Exit_Click;
+            // 
+            // saveButton
+            // 
+            saveButton.FlatStyle = FlatStyle.Popup;
+            saveButton.Location = new Point(534, 397);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(103, 41);
+            saveButton.TabIndex = 5;
+            saveButton.Text = "Save";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveButton_Click;
             // 
             // LogPanel
             // 
             LogPanel.BorderStyle = BorderStyle.FixedSingle;
-            LogPanel.Controls.Add(communityBox);
+            LogPanel.Controls.Add(communityCheckBox);
             LogPanel.Controls.Add(label8);
             LogPanel.Controls.Add(label7);
             LogPanel.Controls.Add(coreDataTextBox);
@@ -91,20 +98,19 @@
             LogPanel.Controls.Add(label3);
             LogPanel.Controls.Add(gameTextBox);
             LogPanel.Controls.Add(label2);
-            LogPanel.Location = new Point(12, 63);
+            LogPanel.Location = new Point(12, 42);
             LogPanel.Name = "LogPanel";
-            LogPanel.Size = new Size(434, 375);
-            LogPanel.TabIndex = 1;
+            LogPanel.Size = new Size(434, 338);
+            LogPanel.TabIndex = 6;
             // 
-            // communityBox
+            // communityCheckBox
             // 
-            communityBox.AutoSize = true;
-            communityBox.Enabled = false;
-            communityBox.Location = new Point(87, 154);
-            communityBox.Name = "communityBox";
-            communityBox.Size = new Size(15, 14);
-            communityBox.TabIndex = 15;
-            communityBox.UseVisualStyleBackColor = true;
+            communityCheckBox.AutoSize = true;
+            communityCheckBox.Location = new Point(87, 154);
+            communityCheckBox.Name = "communityCheckBox";
+            communityCheckBox.Size = new Size(15, 14);
+            communityCheckBox.TabIndex = 15;
+            communityCheckBox.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -129,20 +135,20 @@
             coreDataTextBox.Location = new Point(87, 254);
             coreDataTextBox.Multiline = true;
             coreDataTextBox.Name = "coreDataTextBox";
-            coreDataTextBox.ReadOnly = true;
             coreDataTextBox.ScrollBars = ScrollBars.Vertical;
             coreDataTextBox.Size = new Size(185, 69);
             coreDataTextBox.TabIndex = 11;
+            coreDataTextBox.TextChanged += Changed;
             // 
             // rnsTextBox
             // 
             rnsTextBox.Location = new Point(87, 179);
             rnsTextBox.Multiline = true;
             rnsTextBox.Name = "rnsTextBox";
-            rnsTextBox.ReadOnly = true;
             rnsTextBox.ScrollBars = ScrollBars.Vertical;
             rnsTextBox.Size = new Size(185, 69);
             rnsTextBox.TabIndex = 10;
+            rnsTextBox.TextChanged += Changed;
             // 
             // label6
             // 
@@ -157,9 +163,9 @@
             // 
             objectTextBox.Location = new Point(87, 121);
             objectTextBox.Name = "objectTextBox";
-            objectTextBox.ReadOnly = true;
             objectTextBox.Size = new Size(185, 23);
             objectTextBox.TabIndex = 7;
+            objectTextBox.TextChanged += Changed;
             // 
             // label5
             // 
@@ -174,9 +180,9 @@
             // 
             idTextBox.Location = new Point(87, 33);
             idTextBox.Name = "idTextBox";
-            idTextBox.ReadOnly = true;
             idTextBox.Size = new Size(185, 23);
             idTextBox.TabIndex = 5;
+            idTextBox.TextChanged += Changed;
             // 
             // label4
             // 
@@ -191,9 +197,9 @@
             // 
             partnerTextBox.Location = new Point(87, 92);
             partnerTextBox.Name = "partnerTextBox";
-            partnerTextBox.ReadOnly = true;
             partnerTextBox.Size = new Size(185, 23);
             partnerTextBox.TabIndex = 3;
+            partnerTextBox.TextChanged += Changed;
             // 
             // label3
             // 
@@ -208,9 +214,9 @@
             // 
             gameTextBox.Location = new Point(87, 63);
             gameTextBox.Name = "gameTextBox";
-            gameTextBox.ReadOnly = true;
             gameTextBox.Size = new Size(185, 23);
             gameTextBox.TabIndex = 1;
+            gameTextBox.TextChanged += Changed;
             // 
             // label2
             // 
@@ -221,67 +227,18 @@
             label2.TabIndex = 0;
             label2.Text = "Game";
             // 
-            // Exit
-            // 
-            Exit.FlatStyle = FlatStyle.Popup;
-            Exit.Location = new Point(685, 397);
-            Exit.Name = "Exit";
-            Exit.Size = new Size(103, 41);
-            Exit.TabIndex = 2;
-            Exit.Text = "Exit";
-            Exit.UseVisualStyleBackColor = true;
-            Exit.Click += Exit_Click;
-            // 
-            // label1
-            // 
-            label1.Location = new Point(16, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(430, 24);
-            label1.TabIndex = 3;
-            label1.Text = "Log";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // editFileButtton
-            // 
-            editFileButtton.FlatStyle = FlatStyle.Popup;
-            editFileButtton.Location = new Point(458, 387);
-            editFileButtton.Name = "editFileButtton";
-            editFileButtton.Size = new Size(78, 37);
-            editFileButtton.TabIndex = 5;
-            editFileButtton.Text = "Edit";
-            editFileButtton.UseVisualStyleBackColor = true;
-            editFileButtton.Click += editFileButtton_Click;
-            // 
-            // newFileButton
-            // 
-            newFileButton.FlatStyle = FlatStyle.Popup;
-            newFileButton.Location = new Point(566, 387);
-            newFileButton.Name = "newFileButton";
-            newFileButton.Size = new Size(78, 37);
-            newFileButton.TabIndex = 6;
-            newFileButton.Text = "New File";
-            newFileButton.UseVisualStyleBackColor = true;
-            newFileButton.Click += newFileButton_Click;
-            // 
-            // Form1
+            // EditFile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
-            ControlBox = false;
-            Controls.Add(newFileButton);
-            Controls.Add(editFileButtton);
-            Controls.Add(label1);
-            Controls.Add(Exit);
             Controls.Add(LogPanel);
-            Controls.Add(GBOpcoes);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            ImeMode = ImeMode.Off;
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Programa de teste";
-            GBOpcoes.ResumeLayout(false);
+            Controls.Add(saveButton);
+            Controls.Add(Exit);
+            Controls.Add(filesListBox);
+            Name = "EditFile";
+            Text = "EditFile";
             LogPanel.ResumeLayout(false);
             LogPanel.PerformLayout();
             ResumeLayout(false);
@@ -289,15 +246,15 @@
 
         #endregion
 
-        private GroupBox GBOpcoes;
-        private Panel LogPanel;
-        private Button Exit;
-        private Label label1;
         private ListBox filesListBox;
-        private Button editFileButtton;
-        private Button newFileButton;
-        private TextBox gameTextBox;
-        private Label label2;
+        private Button Exit;
+        private Button saveButton;
+        private Panel LogPanel;
+        private CheckBox communityCheckBox;
+        private Label label8;
+        private Label label7;
+        private TextBox coreDataTextBox;
+        private TextBox rnsTextBox;
         private Label label6;
         private TextBox objectTextBox;
         private Label label5;
@@ -305,10 +262,7 @@
         private Label label4;
         private TextBox partnerTextBox;
         private Label label3;
-        private TextBox rnsTextBox;
-        private TextBox coreDataTextBox;
-        private Label label8;
-        private Label label7;
-        private CheckBox communityBox;
+        private TextBox gameTextBox;
+        private Label label2;
     }
 }

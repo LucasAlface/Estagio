@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "47Fop819otk=",
+  "dgSpecHash": "RphgAQXeTg8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alfac\\Desktop\\Estagio-main\\ProgForms\\ProgForms\\ProgForms.csproj",
+  "projectFilePath": "C:\\Users\\Utilizador\\Desktop\\c#\\ProgForms\\ProgForms\\ProgForms.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Alfac\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\Alfac\\.nuget\\packages\\system.io.pipelines\\9.0.2\\system.io.pipelines.9.0.2.nupkg.sha512",
-    "C:\\Users\\Alfac\\.nuget\\packages\\system.net.http.json\\9.0.2\\system.net.http.json.9.0.2.nupkg.sha512",
-    "C:\\Users\\Alfac\\.nuget\\packages\\system.text.encodings.web\\9.0.2\\system.text.encodings.web.9.0.2.nupkg.sha512",
-    "C:\\Users\\Alfac\\.nuget\\packages\\system.text.json\\9.0.2\\system.text.json.9.0.2.nupkg.sha512"
+    "C:\\Users\\Utilizador\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Utilizador\\.nuget\\packages\\system.io.pipelines\\9.0.2\\system.io.pipelines.9.0.2.nupkg.sha512",
+    "C:\\Users\\Utilizador\\.nuget\\packages\\system.net.http.json\\9.0.2\\system.net.http.json.9.0.2.nupkg.sha512",
+    "C:\\Users\\Utilizador\\.nuget\\packages\\system.text.encodings.web\\9.0.2\\system.text.encodings.web.9.0.2.nupkg.sha512",
+    "C:\\Users\\Utilizador\\.nuget\\packages\\system.text.json\\9.0.2\\system.text.json.9.0.2.nupkg.sha512"
   ],
   "logs": []
 }

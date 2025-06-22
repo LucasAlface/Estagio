@@ -28,39 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Label label7;
+            Label label14;
+            Label label3;
+            Label label15;
             label1 = new Label();
             fileNameTextBox = new TextBox();
             saveFileButtton = new Button();
             label2 = new Label();
             Exit = new Button();
-            label3 = new Label();
-            idTextBox = new TextBox();
-            gameTextBox = new TextBox();
-            label4 = new Label();
-            partnerTextBox = new TextBox();
-            label5 = new Label();
-            objectTextBox = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            communityCheckBox = new CheckBox();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            rnsNameTextBox = new TextBox();
-            rnsIdTextBox = new TextBox();
-            coreDataNameTextBox = new TextBox();
-            coreDataIdTextBox = new TextBox();
+            LogPanel = new Panel();
             rnsAddButton = new Button();
             coreDataAddButton = new Button();
+            coreDataIdTextBox = new TextBox();
+            label8 = new Label();
+            coreDataNameTextBox = new TextBox();
+            label13 = new Label();
+            rnsIdTextBox = new TextBox();
+            label11 = new Label();
+            rnsNameTextBox = new TextBox();
+            label12 = new Label();
+            communityCheckBox = new CheckBox();
+            label6 = new Label();
+            objectTextBox = new TextBox();
+            label5 = new Label();
+            idTextBox = new TextBox();
+            label4 = new Label();
+            partnerTextBox = new TextBox();
+            label9 = new Label();
+            gameTextBox = new TextBox();
+            label10 = new Label();
+            rnsListTextBox = new TextBox();
+            coreDataListTextBox = new TextBox();
+            label7 = new Label();
+            label14 = new Label();
+            label3 = new Label();
+            label15 = new Label();
+            LogPanel.SuspendLayout();
             SuspendLayout();
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ImageAlign = ContentAlignment.MiddleLeft;
+            label7.Location = new Point(84, 173);
+            label7.Name = "label7";
+            label7.Size = new Size(185, 20);
+            label7.TabIndex = 12;
+            label7.Text = "RNS List";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            label14.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ImageAlign = ContentAlignment.MiddleLeft;
+            label14.Location = new Point(84, 252);
+            label14.Name = "label14";
+            label14.Size = new Size(185, 20);
+            label14.TabIndex = 20;
+            label14.Text = "Core Data Refs List";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(454, 88);
+            label3.Name = "label3";
+            label3.Size = new Size(185, 20);
+            label3.TabIndex = 25;
+            label3.Text = "RNS List";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            label15.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ImageAlign = ContentAlignment.MiddleLeft;
+            label15.Location = new Point(454, 253);
+            label15.Name = "label15";
+            label15.Size = new Size(185, 20);
+            label15.TabIndex = 25;
+            label15.Text = "Core Data Refs List";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             label1.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(320, 23);
+            label1.Location = new Point(320, 9);
             label1.Name = "label1";
             label1.Size = new Size(153, 89);
             label1.TabIndex = 0;
@@ -69,19 +123,20 @@
             // 
             // fileNameTextBox
             // 
-            fileNameTextBox.Location = new Point(623, 115);
+            fileNameTextBox.Location = new Point(12, 52);
             fileNameTextBox.Name = "fileNameTextBox";
             fileNameTextBox.Size = new Size(153, 23);
             fileNameTextBox.TabIndex = 1;
+            fileNameTextBox.TextChanged += Changed;
             // 
             // saveFileButtton
             // 
             saveFileButtton.FlatStyle = FlatStyle.Popup;
-            saveFileButtton.Location = new Point(463, 195);
+            saveFileButtton.Location = new Point(528, 397);
             saveFileButtton.Name = "saveFileButtton";
             saveFileButtton.Size = new Size(103, 41);
             saveFileButtton.TabIndex = 6;
-            saveFileButtton.Text = "Save";
+            saveFileButtton.Text = "Save File";
             saveFileButtton.UseVisualStyleBackColor = true;
             saveFileButtton.Click += saveFileButtton_Click;
             // 
@@ -89,7 +144,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(623, 94);
+            label2.Location = new Point(12, 31);
             label2.Name = "label2";
             label2.Size = new Size(80, 18);
             label2.TabIndex = 7;
@@ -106,177 +161,43 @@
             Exit.UseVisualStyleBackColor = true;
             Exit.Click += Exit_Click;
             // 
-            // label3
+            // LogPanel
             // 
-            label3.Font = new Font("Arial", 11.25F);
-            label3.Location = new Point(12, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 21);
-            label3.TabIndex = 10;
-            label3.Text = "Id";
-            // 
-            // idTextBox
-            // 
-            idTextBox.Location = new Point(121, 94);
-            idTextBox.Name = "idTextBox";
-            idTextBox.Size = new Size(169, 23);
-            idTextBox.TabIndex = 11;
-            // 
-            // gameTextBox
-            // 
-            gameTextBox.Location = new Point(121, 123);
-            gameTextBox.Name = "gameTextBox";
-            gameTextBox.Size = new Size(169, 23);
-            gameTextBox.TabIndex = 13;
-            // 
-            // label4
-            // 
-            label4.Font = new Font("Arial", 11.25F);
-            label4.Location = new Point(12, 125);
-            label4.Name = "label4";
-            label4.Size = new Size(103, 21);
-            label4.TabIndex = 12;
-            label4.Text = "Game";
-            // 
-            // partnerTextBox
-            // 
-            partnerTextBox.Location = new Point(121, 152);
-            partnerTextBox.Name = "partnerTextBox";
-            partnerTextBox.Size = new Size(169, 23);
-            partnerTextBox.TabIndex = 15;
-            // 
-            // label5
-            // 
-            label5.Font = new Font("Arial", 11.25F);
-            label5.Location = new Point(12, 154);
-            label5.Name = "label5";
-            label5.Size = new Size(103, 21);
-            label5.TabIndex = 14;
-            label5.Text = "Partner";
-            // 
-            // objectTextBox
-            // 
-            objectTextBox.Location = new Point(121, 181);
-            objectTextBox.Name = "objectTextBox";
-            objectTextBox.Size = new Size(169, 23);
-            objectTextBox.TabIndex = 17;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Arial", 11.25F);
-            label6.Location = new Point(12, 183);
-            label6.Name = "label6";
-            label6.Size = new Size(103, 21);
-            label6.TabIndex = 16;
-            label6.Text = "Object Name";
-            // 
-            // label7
-            // 
-            label7.Font = new Font("Arial", 11.25F);
-            label7.Location = new Point(12, 211);
-            label7.Name = "label7";
-            label7.Size = new Size(103, 21);
-            label7.TabIndex = 18;
-            label7.Text = "Community";
-            // 
-            // communityCheckBox
-            // 
-            communityCheckBox.AutoSize = true;
-            communityCheckBox.Location = new Point(121, 214);
-            communityCheckBox.Name = "communityCheckBox";
-            communityCheckBox.Size = new Size(15, 14);
-            communityCheckBox.TabIndex = 19;
-            communityCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            label8.Font = new Font("Arial", 11.25F);
-            label8.Location = new Point(121, 254);
-            label8.Name = "label8";
-            label8.Size = new Size(103, 21);
-            label8.TabIndex = 20;
-            label8.Text = "RNS";
-            // 
-            // label9
-            // 
-            label9.Font = new Font("Arial", 11.25F);
-            label9.Location = new Point(100, 346);
-            label9.Name = "label9";
-            label9.Size = new Size(124, 21);
-            label9.TabIndex = 21;
-            label9.Text = "Core Data Refs";
-            // 
-            // label10
-            // 
-            label10.Font = new Font("Arial", 11.25F);
-            label10.Location = new Point(12, 281);
-            label10.Name = "label10";
-            label10.Size = new Size(103, 21);
-            label10.TabIndex = 22;
-            label10.Text = "Id";
-            // 
-            // label11
-            // 
-            label11.Font = new Font("Arial", 11.25F);
-            label11.Location = new Point(12, 312);
-            label11.Name = "label11";
-            label11.Size = new Size(103, 21);
-            label11.TabIndex = 23;
-            label11.Text = "Name";
-            // 
-            // label12
-            // 
-            label12.Font = new Font("Arial", 11.25F);
-            label12.Location = new Point(12, 414);
-            label12.Name = "label12";
-            label12.Size = new Size(103, 21);
-            label12.TabIndex = 25;
-            label12.Text = "Name";
-            // 
-            // label13
-            // 
-            label13.Font = new Font("Arial", 11.25F);
-            label13.Location = new Point(12, 383);
-            label13.Name = "label13";
-            label13.Size = new Size(103, 21);
-            label13.TabIndex = 24;
-            label13.Text = "Id";
-            // 
-            // rnsNameTextBox
-            // 
-            rnsNameTextBox.Location = new Point(89, 310);
-            rnsNameTextBox.Name = "rnsNameTextBox";
-            rnsNameTextBox.Size = new Size(169, 23);
-            rnsNameTextBox.TabIndex = 27;
-            // 
-            // rnsIdTextBox
-            // 
-            rnsIdTextBox.Location = new Point(89, 281);
-            rnsIdTextBox.Name = "rnsIdTextBox";
-            rnsIdTextBox.Size = new Size(169, 23);
-            rnsIdTextBox.TabIndex = 26;
-            // 
-            // coreDataNameTextBox
-            // 
-            coreDataNameTextBox.Location = new Point(89, 412);
-            coreDataNameTextBox.Name = "coreDataNameTextBox";
-            coreDataNameTextBox.Size = new Size(169, 23);
-            coreDataNameTextBox.TabIndex = 29;
-            // 
-            // coreDataIdTextBox
-            // 
-            coreDataIdTextBox.Location = new Point(89, 383);
-            coreDataIdTextBox.Name = "coreDataIdTextBox";
-            coreDataIdTextBox.Size = new Size(169, 23);
-            coreDataIdTextBox.TabIndex = 28;
+            LogPanel.BorderStyle = BorderStyle.FixedSingle;
+            LogPanel.Controls.Add(rnsAddButton);
+            LogPanel.Controls.Add(coreDataAddButton);
+            LogPanel.Controls.Add(coreDataIdTextBox);
+            LogPanel.Controls.Add(label8);
+            LogPanel.Controls.Add(coreDataNameTextBox);
+            LogPanel.Controls.Add(label13);
+            LogPanel.Controls.Add(label14);
+            LogPanel.Controls.Add(rnsIdTextBox);
+            LogPanel.Controls.Add(label11);
+            LogPanel.Controls.Add(rnsNameTextBox);
+            LogPanel.Controls.Add(label12);
+            LogPanel.Controls.Add(communityCheckBox);
+            LogPanel.Controls.Add(label7);
+            LogPanel.Controls.Add(label6);
+            LogPanel.Controls.Add(objectTextBox);
+            LogPanel.Controls.Add(label5);
+            LogPanel.Controls.Add(idTextBox);
+            LogPanel.Controls.Add(label4);
+            LogPanel.Controls.Add(partnerTextBox);
+            LogPanel.Controls.Add(label9);
+            LogPanel.Controls.Add(gameTextBox);
+            LogPanel.Controls.Add(label10);
+            LogPanel.Location = new Point(12, 81);
+            LogPanel.Name = "LogPanel";
+            LogPanel.Size = new Size(434, 366);
+            LogPanel.TabIndex = 10;
             // 
             // rnsAddButton
             // 
             rnsAddButton.FlatStyle = FlatStyle.Popup;
-            rnsAddButton.Location = new Point(284, 292);
+            rnsAddButton.Location = new Point(285, 200);
             rnsAddButton.Name = "rnsAddButton";
             rnsAddButton.Size = new Size(103, 41);
-            rnsAddButton.TabIndex = 30;
+            rnsAddButton.TabIndex = 12;
             rnsAddButton.Text = "Add";
             rnsAddButton.UseVisualStyleBackColor = true;
             rnsAddButton.Click += rnsAddButton_Click;
@@ -284,13 +205,187 @@
             // coreDataAddButton
             // 
             coreDataAddButton.FlatStyle = FlatStyle.Popup;
-            coreDataAddButton.Location = new Point(284, 394);
+            coreDataAddButton.Location = new Point(285, 282);
             coreDataAddButton.Name = "coreDataAddButton";
             coreDataAddButton.Size = new Size(103, 41);
-            coreDataAddButton.TabIndex = 31;
+            coreDataAddButton.TabIndex = 13;
             coreDataAddButton.Text = "Add";
             coreDataAddButton.UseVisualStyleBackColor = true;
             coreDataAddButton.Click += coreDataAddButton_Click;
+            // 
+            // coreDataIdTextBox
+            // 
+            coreDataIdTextBox.Location = new Point(84, 275);
+            coreDataIdTextBox.Name = "coreDataIdTextBox";
+            coreDataIdTextBox.Size = new Size(185, 23);
+            coreDataIdTextBox.TabIndex = 24;
+            coreDataIdTextBox.TextChanged += Changed;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(0, 279);
+            label8.Name = "label8";
+            label8.Size = new Size(17, 15);
+            label8.TabIndex = 23;
+            label8.Text = "Id";
+            // 
+            // coreDataNameTextBox
+            // 
+            coreDataNameTextBox.Location = new Point(84, 305);
+            coreDataNameTextBox.Name = "coreDataNameTextBox";
+            coreDataNameTextBox.Size = new Size(185, 23);
+            coreDataNameTextBox.TabIndex = 22;
+            coreDataNameTextBox.TextChanged += Changed;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(0, 308);
+            label13.Name = "label13";
+            label13.Size = new Size(39, 15);
+            label13.TabIndex = 21;
+            label13.Text = "Name";
+            // 
+            // rnsIdTextBox
+            // 
+            rnsIdTextBox.Location = new Point(84, 196);
+            rnsIdTextBox.Name = "rnsIdTextBox";
+            rnsIdTextBox.Size = new Size(185, 23);
+            rnsIdTextBox.TabIndex = 19;
+            rnsIdTextBox.TextChanged += Changed;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(0, 200);
+            label11.Name = "label11";
+            label11.Size = new Size(17, 15);
+            label11.TabIndex = 18;
+            label11.Text = "Id";
+            // 
+            // rnsNameTextBox
+            // 
+            rnsNameTextBox.Location = new Point(84, 226);
+            rnsNameTextBox.Name = "rnsNameTextBox";
+            rnsNameTextBox.Size = new Size(185, 23);
+            rnsNameTextBox.TabIndex = 17;
+            rnsNameTextBox.TextChanged += Changed;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(0, 229);
+            label12.Name = "label12";
+            label12.Size = new Size(39, 15);
+            label12.TabIndex = 16;
+            label12.Text = "Name";
+            // 
+            // communityCheckBox
+            // 
+            communityCheckBox.AutoSize = true;
+            communityCheckBox.Location = new Point(87, 154);
+            communityCheckBox.Name = "communityCheckBox";
+            communityCheckBox.Size = new Size(15, 14);
+            communityCheckBox.TabIndex = 15;
+            communityCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 153);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 15);
+            label6.TabIndex = 8;
+            label6.Text = "Community";
+            // 
+            // objectTextBox
+            // 
+            objectTextBox.Location = new Point(87, 121);
+            objectTextBox.Name = "objectTextBox";
+            objectTextBox.Size = new Size(185, 23);
+            objectTextBox.TabIndex = 7;
+            objectTextBox.TextChanged += Changed;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 124);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 15);
+            label5.TabIndex = 6;
+            label5.Text = "Object Name";
+            // 
+            // idTextBox
+            // 
+            idTextBox.Location = new Point(87, 33);
+            idTextBox.Name = "idTextBox";
+            idTextBox.Size = new Size(185, 23);
+            idTextBox.TabIndex = 5;
+            idTextBox.TextChanged += Changed;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 37);
+            label4.Name = "label4";
+            label4.Size = new Size(17, 15);
+            label4.TabIndex = 4;
+            label4.Text = "Id";
+            // 
+            // partnerTextBox
+            // 
+            partnerTextBox.Location = new Point(87, 92);
+            partnerTextBox.Name = "partnerTextBox";
+            partnerTextBox.Size = new Size(185, 23);
+            partnerTextBox.TabIndex = 3;
+            partnerTextBox.TextChanged += Changed;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(3, 95);
+            label9.Name = "label9";
+            label9.Size = new Size(45, 15);
+            label9.TabIndex = 2;
+            label9.Text = "Partner";
+            // 
+            // gameTextBox
+            // 
+            gameTextBox.Location = new Point(87, 63);
+            gameTextBox.Name = "gameTextBox";
+            gameTextBox.Size = new Size(185, 23);
+            gameTextBox.TabIndex = 1;
+            gameTextBox.TextChanged += Changed;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(3, 66);
+            label10.Name = "label10";
+            label10.Size = new Size(38, 15);
+            label10.TabIndex = 0;
+            label10.Text = "Game";
+            // 
+            // rnsListTextBox
+            // 
+            rnsListTextBox.Location = new Point(454, 111);
+            rnsListTextBox.Multiline = true;
+            rnsListTextBox.Name = "rnsListTextBox";
+            rnsListTextBox.ScrollBars = ScrollBars.Vertical;
+            rnsListTextBox.Size = new Size(185, 115);
+            rnsListTextBox.TabIndex = 11;
+            rnsListTextBox.TextChanged += Changed;
+            // 
+            // coreDataListTextBox
+            // 
+            coreDataListTextBox.Location = new Point(454, 276);
+            coreDataListTextBox.Multiline = true;
+            coreDataListTextBox.Name = "coreDataListTextBox";
+            coreDataListTextBox.ScrollBars = ScrollBars.Vertical;
+            coreDataListTextBox.Size = new Size(185, 115);
+            coreDataListTextBox.TabIndex = 12;
+            coreDataListTextBox.TextChanged += Changed;
             // 
             // NewFile
             // 
@@ -298,28 +393,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(800, 450);
-            Controls.Add(coreDataAddButton);
-            Controls.Add(rnsAddButton);
-            Controls.Add(coreDataNameTextBox);
-            Controls.Add(coreDataIdTextBox);
-            Controls.Add(rnsNameTextBox);
-            Controls.Add(rnsIdTextBox);
-            Controls.Add(label12);
-            Controls.Add(label13);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(communityCheckBox);
-            Controls.Add(label7);
-            Controls.Add(objectTextBox);
-            Controls.Add(label6);
-            Controls.Add(partnerTextBox);
-            Controls.Add(label5);
-            Controls.Add(gameTextBox);
-            Controls.Add(label4);
-            Controls.Add(idTextBox);
+            Controls.Add(label15);
             Controls.Add(label3);
+            Controls.Add(coreDataListTextBox);
+            Controls.Add(rnsListTextBox);
+            Controls.Add(LogPanel);
             Controls.Add(Exit);
             Controls.Add(label2);
             Controls.Add(saveFileButtton);
@@ -327,6 +405,8 @@
             Controls.Add(label1);
             Name = "NewFile";
             Text = "NewFile";
+            LogPanel.ResumeLayout(false);
+            LogPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -338,28 +418,29 @@
         private Button saveFileButtton;
         private Label label2;
         private Button Exit;
-        private Label label3;
+        private Panel LogPanel;
+        private CheckBox communityCheckBox;
+        private Label label7;
+        private Label label6;
+        private TextBox objectTextBox;
+        private Label label5;
         private TextBox idTextBox;
-        private TextBox gameTextBox;
         private Label label4;
         private TextBox partnerTextBox;
-        private Label label5;
-        private TextBox objectTextBox;
-        private Label label6;
-        private Label label7;
-        private CheckBox communityCheckBox;
-        private Label label8;
         private Label label9;
+        private TextBox gameTextBox;
         private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private TextBox rnsNameTextBox;
         private TextBox rnsIdTextBox;
-        private TextBox coreDataNameTextBox;
+        private Label label11;
+        private TextBox rnsNameTextBox;
+        private Label label12;
         private TextBox coreDataIdTextBox;
-        private Button rbn;
-        private Button coreDataAddButton;
+        private Label label8;
+        private TextBox coreDataNameTextBox;
+        private Label label13;
         private Button rnsAddButton;
+        private Button coreDataAddButton;
+        private TextBox rnsListTextBox;
+        private TextBox coreDataListTextBox;
     }
 }
