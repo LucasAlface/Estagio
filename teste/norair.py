@@ -11,9 +11,9 @@ Northern Aircraft Labs, NorAirLabs and GAMAN are brands and trademarks
 of GAMAN Portugal, Lda. and can not be used without expressed written 
 consent from GAMAN Portugal, Lda.
 
-All other trademarks and brands are property of their respective owners. 
-All company, product and service names mentioned in this software and/or 
-documentation are for identification purposes only. Use of these names, 
+All other trademarks and brands are property of their respective owners.
+All company, product and service names mentioned in this software and/ors
+documentation are for identification purposes only. Use of these names,
 trademarks and brands does not imply endorsement.
 
 GAMAN Portugal, Lda. is not reliable or responsible for the use of this 
@@ -38,8 +38,8 @@ https://www.norairlabs.com
 
 """
 This file contains the classes, with their respective constructors
-and functions, of the products present in the Norair Labs SDK.
-The functions recieve the request structure from the main.py file
+and methods, of the products present in the Norair Labs SDK.
+The methods recieve the request structure from the main.py file
 and returns the bytearray necessary to write and/or read the request
 to posteriorly recieve the response and/or a result intended from the
 instruction
@@ -47,8 +47,7 @@ instruction
 import numpy as num
 
 class MBx24:
-
-    # Commands
+    # MBx24 Command Codes
     MB_ENUMERATE_CMD = 7
     MB_PING_CMD = 6
     MB_SET_BACKLIT_COLOR_CMD = 41
@@ -67,12 +66,13 @@ class MBx24:
     MB_SOFT_RESET_CMD = 4
     MB_HARD_RESET_CMD = 2
 
+    # Constructor
     def __init__(self, id, serialNumber):
-        # Constructor with the id and Serial Number of the peripheral as arguments
+        # Constructor with the ID and Serial Number of the peripheral as arguments
         self.id = id
         self.serialNumber = serialNumber
     
-
+    # ***** MBx24 METHODS *****
     def Enumerate(self, port, s):
         # Enumerates the peripheral and inserts it in the given port enumeration table
         # "port" - checks what port the peripheral will be enumarated (C-Port or J-Port)
@@ -121,7 +121,7 @@ class MBx24:
         # Second Output Bank s2 = outputs 9-16 
         # Third Output Bank s3 = outputs 17-24 
         # Fourth Output Bank s4 = outputs 25-32
-        # The arguments are translated to a byte where "1" means ON and "0" means OFF 
+        # The arguments are translated to a bit array where "1" means ON and "0" means OFF 
         return(bytes([self.id, self.MB_BULK_SET_OUTPUT_CMD, s1, s2, s3, s4])) 
     
     def SetOutputType(self, output, type, flashPeriod, inverted):
@@ -176,12 +176,19 @@ class MBx24:
         # "displayNumber" - (1-4)
         # "digitNumber" - (1-4)
         # "characterConstructor" - A character constructor is a byte with values for a 7-segment scheme where each bit corresponds to a segment.
-        # Bit Position: | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-        # Segment:     | dp | G | F | E | D | C | B | A |
+        # Example:
+        # Bit Position: |  7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+        # Segment:      | dp | G | F | E | D | C | B | A |
+        # "dp" - corresponds to the point in the Display Digit, the rest are the 7-segments of the display
         return (bytes([self.id, self.MB_SET_DISPLAY_DIGIT_CMD, displayNumber, digitNumber, characterConstructor]))
     
     def ReportEnconder(self):
         # Returns the MBx24 encoders counters representation in a bulk
+        # Example:
+        # Bit Position: |  7  | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+        # Value:        | MSB | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
+        # The MSB represetns if the magnitude was positive, negative or neutral (0- positive ; 1- negative)
+        # In this case, if the MSB = 0, the value = 85. If the MSB = 1, the value = -85
         return (bytes([self.id, self.MB_REPORT_ENCODER_CMD]))
     
     def ReportInputConnectors(self):
@@ -197,14 +204,16 @@ class MBx24:
         return (bytes([self.id, self.MB_HARD_RESET_CMD]))   
 
 class OBCS:
-
+    # OBCS Command Codes
     OBCS_PING_CMD = 6
     OBCS_HARD_RESET_CMD = 2
     OBCS_REPORT_ENUMERATION_CMD = 18
 
+    # Constructor
     def __init__(self):
-        self.id = 99
+        self.id = 99 # OBCS reserved ID 
 
+    # ***** OBCS METHODS *****
     def Ping(self):
         # Returns the OBCS welcome message as proof of life ("99present")
         return (bytes([self.id, self.OBCS_PING_CMD]))
@@ -219,7 +228,7 @@ class OBCS:
     
 
 class JPort:
-
+    # J-Port Command Codes
     JPORT_PING_CMD = 6
     JPORT_HARD_RESET_CMD = 2
     JPORT_SOFT_RESET_CMD = 4
@@ -227,9 +236,11 @@ class JPort:
     JPORT_REPORT_BUTTONS_CMD = 12
     JPORT_REPORT_ENUMERATION_CMD = 18
 
+    # Constructor
     def __init__(self):
-        self.id = 10
-       
+        self.id = 10 # J-Port reserved ID
+    
+    # ***** J-PORT METHODS *****   
     def Ping(self):
         # Returns the J-Port welcome message as proof of life ("10present")
         return (bytes([self.id, self.JPORT_PING_CMD]))
@@ -258,7 +269,7 @@ class JPort:
         return (bytes([self.id, self.JPORT_REPORT_ENUMERATION_CMD]))
 
 class RNS:
-
+    # RNS Command Codes
     RNS_PING_CMD = 6
     RNS_ENUMERATE_CMD = 7 
     RNS_SOFT_RESET_CMD = 4
@@ -281,10 +292,13 @@ class RNS:
     RNS_SET_XPDR_MINIMUM_SQUAWK_CMD = 34
     RNS_SET_XPDR_SQUAWK_CODE_CMD = 38
 
+    # Constructor
     def __init__(self, id, serialNumber):
+        # Constructor with the ID and Serial Number of the peripheral as arguments
         self.id = id
         self.serialNumber = serialNumber
-       
+
+     # ***** RNS METHODS *****  
     def Ping(self):
         # Returns the serial number as proof of life
         return (bytes([self.id, 6]))
@@ -434,8 +448,8 @@ class RNS:
 
 def JoystickUnpack(data):
     # Returns an array off 200 digits with all of the joystick buttons logical states
-    # Unpacks the bits of the 26 bulks recieved by the ReportButtons() function using numpy
-    # "data" - The returned array of the ReportButtons() function
+    # Unpacks the bits of the 26 bulks recieved by the ReportButtons() method using numpy
+    # "data" - The returned array of the ReportButtons() method
     # You can install numpy with "pip install numpy"
     res = data
     r = bytearray(200)
